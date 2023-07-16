@@ -10,7 +10,7 @@ class BasicBank():
             self.accountInfo = json.load(f)
         
         
-    def checkPin(self, userName, cardNum, pin):
+    def checkPin(self, cardNum: str, pin: str) -> bool:
         if cardNum in self.cardInfo:
             if(self.cardInfo[cardNum]["password"] == pin):
                 return True
@@ -19,7 +19,7 @@ class BasicBank():
             raise Exception("[BANK] Invalid card number!")
     
 
-    def getAccountNums(self, cardNum):
+    def getAccountNums(self, cardNum: str) -> list:
         if(cardNum in self.cardInfo):
             accountNums = self.cardInfo[cardNum]["accounts"]
             return accountNums
@@ -27,14 +27,14 @@ class BasicBank():
             raise Exception("[BANK] Invalid card number!")
     
 
-    def getBalance(self, accountNum):
+    def getBalance(self, accountNum: str) -> int:
         if(accountNum in self.accountInfo):
             return self.accountInfo[accountNum]["balance"]
         else:
             raise Exception("[BANK] Invalid account number!")
     
 
-    def deposit(self, accountNum, money):
+    def deposit(self, accountNum: str, money: int) -> bool:
         if(accountNum in self.accountInfo):
             self.accountInfo[accountNum]["balance"] += money
             return True
@@ -42,7 +42,7 @@ class BasicBank():
             raise Exception("[BANK] Invalid account number!")
 
 
-    def withdraw(self, accountNum, amount):
+    def withdraw(self, accountNum: str, amount: int) -> int:
         if(accountNum in self.accountInfo):
             if(self.accountInfo[accountNum]["balance"] >= amount):
                 self.accountInfo[accountNum]["balance"] -= amount

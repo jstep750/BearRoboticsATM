@@ -9,81 +9,63 @@ class ATMsystem():
         self.tempCard = None
         self.currentCard = None
         self.currentAccount = None
-        self.currentBank = BasicBank()
+        self.bankSystem = BasicBank()
 
 
-    def readCard(self, cardNum, userName=""):
-        self.tempCard = BasicCard(cardNum, userName, self.currentBank)
+    def readCard(self, cardNum: str, userName: str = "") -> None:
+        self.tempCard = BasicCard(cardNum, userName, self.bankSystem)
     
 
-    def checkPinCorrect(self, pin):
+    def checkPinCorrect(self, pin: str) -> bool:
         if(self.tempCard):
             if(self.tempCard.checkPin(pin)):
                 self.currentCard = self.tempCard
+                return True
             else:
                 raise Exception("[SYSTEM]: PIN incorrect!")
-            return True
         else:
             raise Exception("[SYSTEM]: Insert Card!")
 
 
-    def getAccountNums(self):
+    def getAccountNums(self) -> list:
         if self.currentCard:
-            try:
-                accountNums = self.currentCard.getAccountNums()
-            except:
-                raise
-            return accountNums
+            return self.currentCard.getAccountNums()
         else:
             raise Exception("[SYSTEM]: No Valid Card!")
         
 
-    def selectAccount(self, accountNum):
+    def selectAccount(self, accountNum: str) -> bool:
         if self.currentCard:
-            try:
-                currentAccount = BasicAccount(accountNum, self.currentCard)
-            except:
-                raise
-            self.currentAccount = currentAccount
+            self.currentAccount = BasicAccount(accountNum, self.currentCard)
+            return True
         else:
             raise Exception("[SYSTEM]: No Valid Card!")
 
-
     
-    def getBalance(self):
+    def getBalance(self) -> int:
         if self.currentAccount:
-            try:
-                balance = self.currentAccount.getBalance()
-            except:
-                raise
-            return balance
+            return self.currentAccount.getBalance()
         else:
-            print("[SYSTEM]: No Valid Account Selected!")
+            raise Exception("[SYSTEM]: No Valid Account Selected!")
 
 
 
-    def deposit(self, money):
+    def deposit(self, money: int) -> bool:
         if(self.currentAccount):
-            try:
-                self.cashBin.putMoney(money)
-                self.currentAccount.deposit(money)
-            except:
-                raise
+            self.cashBin.putMoney(money)
+            self.currentAccount.deposit(money)
             return True
         else:
-            print("[SYSTEM]: No Valid Account Selected!")
+            raise Exception("[SYSTEM]: No Valid Account Selected!")
 
     
-    def withdraw(self, amount):
+    def withdraw(self, amount: int) -> int:
         if(self.currentAccount):
-            try:
-                self.currentAccount.withdraw(amount)
-                money = self.cashBin.getMoney(amount)
-            except:
-                raise
+            self.currentAccount.withdraw(amount)
+            money = self.cashBin.getMoney(amount)
             return money
         else:
-            print("[SYSTEM]: No Valid Account Selected!")
+            raise Exception("[SYSTEM]: No Valid Account Selected!")
 
         
 
