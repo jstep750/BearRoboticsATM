@@ -17,7 +17,7 @@ def test(system: ATMsystem, cardNumber, pin, account, action, money=0):
             if(myATMsystem.deposit(money)):
                 print("Deposit Success")
         elif(action == 3):
-            if(myATMsystem.withdraw(money)):
+            if(myATMsystem.withdraw(money) == money):
                 print("Withdraw Success")
         return True
     

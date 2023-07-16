@@ -2,6 +2,15 @@
 Implementation of a simple ATM controller
 
 
+## Class Description
+![image](https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/74dc5469-c68c-4f0e-b0a8-ce34224cbec4)
+- **ATMSystem** : controller of the ATM system
+- **BasicCard** : requests bank to check pin and get account numbers of the card
+- **BasicAccount** : requests bank for balance, deposit, withdraw of current account
+- **BasicBank** : bank system for testing ATM system
+- **CashBin** : virtual cash bin for ATM system
+
+
 ## Test Cases
 - 1st row : number of test cases (N)
 - next N rows : [card number, input PIN, selected account num(1~5), action(1:See Balance/2:Deposit/3:Withdraw), money(if action is 2 or 3)]
