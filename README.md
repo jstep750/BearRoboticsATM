@@ -3,7 +3,7 @@ Implementation of a simple ATM controller
 
 
 ## Class Description
-![image](https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/74dc5469-c68c-4f0e-b0a8-ce34224cbec4)
+![image](https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/8fa14709-0441-4ec1-bebc-8940603806b5)
 - **ATMSystem** : controller of the ATM system
 - **BasicCard** : requests bank to check pin and get account numbers of the card
 - **BasicAccount** : requests bank for balance, deposit, withdraw of current account
