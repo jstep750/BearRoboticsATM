@@ -1,0 +1,18 @@
+class CashBin():
+    def __init__(self):
+        self.money = 100000000
+        self.maximum = 100000000000
+
+    def putMoney(self, money):
+        if(self.money + money <= self.maximum):
+            self.money += money
+            return True
+        else:
+            raise Exception("Maximum deposit exceeded!")
+    
+    def getMoney(self, amount):
+        if(self.money >= amount):
+            self.money -= amount
+            return amount
+        else:
+            raise Exception("Not enough money left!")
