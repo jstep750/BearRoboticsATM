@@ -7,7 +7,7 @@ class BasicAccount():
             raise Exception("[ACCOUNT]: Check Card PIN!")
         self.accountNum = accountNum
         self.card = card
-        self.bankSystem = BasicBank()
+        self.bankSystem = card.bankSystem
 
 
     def getBalance(self):

@@ -8,11 +8,11 @@ class CashBin():
             self.money += money
             return True
         else:
-            raise Exception("Maximum deposit exceeded!")
+            raise Exception("[CASHBIN] Maximum deposit exceeded!")
     
     def getMoney(self, amount):
         if(self.money >= amount):
             self.money -= amount
             return amount
         else:
-            raise Exception("Not enough money left!")
+            raise Exception("[CASHBIN] Not enough money left!")

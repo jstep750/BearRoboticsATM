@@ -1,12 +1,12 @@
 from bankSystem.basicBank import BasicBank
 
 class BasicCard():
-    def __init__(self, userName, cardNum):
-        self.userName = userName
+    def __init__(self, cardNum, userName, bankSystem: BasicBank):
         self.cardNum = cardNum
+        self.userName = userName
         self.pinChecked = False
         self.__accountNums = []
-        self.bankSystem = BasicBank()
+        self.bankSystem = bankSystem
 
 
     def checkPin(self, pin):
