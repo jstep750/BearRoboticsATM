@@ -1,12 +1,34 @@
 # BearRoboticsATM
 Implementation of a simple ATM controller
 
+## File Strcture
+```
+BearRoboticsATM
+│
+├──📁ATMsystem
+│   └── cashBin.py       -> Contains CashBin class
+│   └── system.py        -> Contains ATMsystem class
+│
+├──📁account
+│   └── basicAccount.py  -> contains BasicAccount class
+│
+├──📁bankSystem
+│   └── 📁data
+│   │    └── account.json
+│   │    └── card.json
+│   └── basicBank.py     -> contains BasicBank class
+│
+├──📁card
+│   └── basicCard.py     -> contains BasicCard class
+|       
+├── cardnum.txt      -> txt file for generating data
+├── generateData.py  -> generate account.json, card.json
+├── testcase.txt     -> sts file for testing
+└── main.py          -> run test code
+```
 
 ## Class Description
-<p allign="center">
-    <img src = "https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/8fa14709-0441-4ec1-bebc-8940603806b5" width="60%">
-</p>
-
+- <img src = "https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/8fa14709-0441-4ec1-bebc-8940603806b5" width="60%">
 
 - **ATMSystem** : controller of the ATM system
 - **BasicCard** : requests bank to check pin and get account numbers of the card
