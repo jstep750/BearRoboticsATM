@@ -1,11 +1,33 @@
 # BearRoboticsATM
 Implementation of a simple ATM controller
 
+
+## Test Cases
+- 1st row : number of test cases (N)
+- next N rows : [card number, input PIN, selected account num(1~5), action(1:See Balance/2:Deposit/3:Withdraw), money(if action is 2 or 3)]
+- example: testcase.txt
+    ```
+    3
+    [123456789, 987654321, 2, 1]
+    [123456789, 987654321, 3, 2, 10000]
+    [123456789, 987654321, 5, 3, 20000]
+    ```
+
+## Run Test
+Run your test cases with txt file
+```
+python main.py testcase.txt
+```
+
+## Test Result
+<img width="343" alt="image" src="https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/e09c8c69-c262-435b-bc0a-af025ce22b1d">
+
+
 ## Generate Test DB
-- insert list of card numbers
+You can generate test db with card numbers
 - correct pin : reversed card number
 - 5 accounts per card are randomly generated
-- balance are randomly assigned to each accounts
+- current balance are randomly assigned to each accounts
 - run generation code
     ```
     python generateData.py cardnum.txt
@@ -54,19 +76,3 @@ Implementation of a simple ATM controller
             ...
         }
     ```
-
-## Test Case
-- 1st row : number of test cases (N)
-- next N rows : [card number, input PIN, selected account num(1~5), action(1:See Balance/2:Deposit/3:Withdraw), money(if action is 2 or 3)]
-- example: test.txt
-    ```
-    3
-    [123456789, 987654321, 2, 1]
-    [123456789, 987654321, 3, 2, 10000]
-    [123456789, 987654321, 5, 3, 20000]
-    ```
-
-## Run Test
-```
-python main.py testcase.txt
-```

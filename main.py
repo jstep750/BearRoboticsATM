@@ -8,7 +8,6 @@ def test(system: ATMsystem, cardNumber, pin, account, action, money=0):
         myATMsystem.readCard(str(cardNumber))
         myATMsystem.checkPinCorrect(str(pin))
         accountNums = myATMsystem.getAccountNums()
-        # print("    Accounts:", accountNums)
         myATMsystem.selectAccount(str(accountNums[account-1]))
 
         if(action == 1):
@@ -45,35 +44,11 @@ if __name__ == '__main__':
             line = f.readline()
             case = eval(line)
             if(test(myATMsystem, *case)):
-                print("test case:", i, " => success!")
+                print("test case:", i, " => Success!")
                 success += 1
             else:
-                print("test case:", i, " => fail!")
+                print("test case:", i, " => Fail!")
 
-        
-
-
-
-
-
-
-
-
-# myATMsystem = ATMsystem()
-
-# myATMsystem.readCard("Hyejin", "123456789")
-
-# pin = "987654321"
-# print(myATMsystem.checkPinCorrect(pin))
-
-# accountNums = myATMsystem.getAccountNums()
-# print(accountNums)
-
-# for a in accountNums:
-#     myATMsystem.selectAccount(a)
-#     balance = myATMsystem.getBalance()
-#     print(a,":",balance)
-
-
-
+        print('\n---------TEST RESULT---------\n')
+        print("  Success:", success, "Fail:", int(N)-success)
 
