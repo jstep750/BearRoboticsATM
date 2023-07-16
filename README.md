@@ -28,7 +28,7 @@ BearRoboticsATM
 ```
 
 ## Class Description
-- <img src = "https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/8fa14709-0441-4ec1-bebc-8940603806b5" width="60%">
+<img src = "https://github.com/zzsza/Boostcamp-AI-Tech-Product-Serving/assets/48945057/8fa14709-0441-4ec1-bebc-8940603806b5" width="60%">
 
 - **ATMSystem** : controller of the ATM system
 - **BasicCard** : requests bank to check pin and get account numbers of the card
